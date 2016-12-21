@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "Belts";
+}
+
+<div id="Wrapper">
+
+    <div class="belts">
+        <div id="white-belt" class="belt" onmouseover="getData('../whiteBelt.html', 'beltsText'), enlarge(this)">
+            <div id="beltsText" class="beltInfo" ></div>
+        </div>
+        <div id="blue-belt" class="belt" onmouseover="getData('../blueBelt.html', 'beltsText'), enlarge(this)">
+        </div>
+        <div id="purple-belt" class="belt" onmouseover="getData('../purpleBelt.html', 'beltsText'), enlarge(this)">
+            <div></div>
+        </div>
+        <div id="brown-belt" class="belt" onmouseover="getData('../brownBelt.html', 'beltsText'), enlarge(this)">
+            <div></div>
+        </div>
+        <div id="black-belt" class="belt" onmouseover="getData('../blackBelt.html', 'beltsText'), enlarge(this)">
+            <div></div>
+        </div>
+        <div id="blackred-belt" class="belt" onmouseover="getData('../brBelt.html', 'beltsText'), enlarge(this)">
+            <div></div>
+        </div>
+        <div id="red-belt" class="belt" onmouseover="getData('../redBelt.html', 'beltsText'), enlarge(this)">
+            <div></div>
+        </div>
+     </div>
+    
+
+
+</div>
+
+<script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-2.0.3.min.js"></script>
+<script type="text/javascript">
+
+
+    var XMLHttpRequestObject = false;
+
+
+        if (window.XMLHttpRequest) {
+            XMLHttpRequestObject = new XMLHttpRequest();
+        } else if (window.ActiveXObject) {
+            XMLHttpRequestObject =
+              new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        function getData(datasource, divID) {
+            if (XMLHttpRequestObject) {
+                var obj = document.getElementById(divID);
+                XMLHttpRequestObject.open("GET", datasource, true);
+                XMLHttpRequestObject.onreadystatechange = function () {
+                    if (XMLHttpRequestObject.readyState == 4
+                     && XMLHttpRequestObject.status == 200) {
+                        obj.innerHTML =
+                        XMLHttpRequestObject.responseText;
+                    }
+                }
+                XMLHttpRequestObject.send(null);
+            }
+        }
+</script>

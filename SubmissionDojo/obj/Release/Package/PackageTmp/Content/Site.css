@@ -1,0 +1,224 @@
+﻿body {
+    padding-top: 40px;
+    padding-bottom: 20px;
+    background-color:#433E3F;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.navbar-fixed-top{
+    background-color:#49111C;
+   
+}
+.navbar-inverse .navbar-nav > li > a {
+    color:#D0DDD7;
+    font-family:Aldrich;
+}
+
+.navbar-inverse .navbar-brand {
+    color: #0A0908;
+    font-family:Aldrich;
+}
+
+
+.Wrapper {
+    padding-top: 8px;
+    width:100%;
+    height:100%;
+}
+
+    .Cover{
+   
+   width:100%;
+   height:300px;  
+   
+}
+
+.background {
+    width:100%;
+    height:100%;
+   background-image: url('../Images/CoverPhoto6.png');
+    height:300px;
+    background-color:blue;
+    overflow:hidden;
+}
+
+@font-face {
+    font-family: Advanced Architecture;
+    src: url('../fonts/Advanced Architecture.ttf');
+}
+
+@font-face {
+    font-family: Aldrich;
+    src: url('../fonts/Aldrich-Regular.ttf');
+}
+
+.font {
+    font-family:Aldrich;
+    color:#49111C;
+    text-align: center;
+    text-decoration: underline;
+
+}
+.intro {
+    margin-top:10px;
+    margin-left:auto;
+    margin-right:auto;
+    width:500px;
+    background-color:blue;
+    height:300px;
+    background-color:white;
+    padding-left:10px;
+    font-family: Aldrich;
+    border-radius:10px;
+}
+
+#map {
+    width:inherit;
+    height:400px;
+    background-color:blue;
+       
+}
+
+#floating-panel
+{
+    margin-left:550px;
+    margin-top:10px;
+    
+
+}
+.search {
+    margin-left:530px;
+    margin-top:10px;
+   
+    
+}
+
+.search1 {
+     color:#D0DDD7;
+    font-family:Aldrich;
+    font-size:large;
+   
+}
+#address {
+    font-family:Aldrich;
+    padding:3px;
+}
+#submit {
+      padding:3px;
+     margin-left:5px;
+      font-family:Aldrich;
+      background-color:#49111C;
+      font-size:medium;
+      color:#D0DDD7;
+       padding:3px;
+     
+}
+
+.belts {
+    margin-top:10px;
+    background-image: url('../Images/Belts2.png');
+    width:1348px;
+    height:721px;
+    background-color: #cccccc;
+}
+.belt {
+    width:1348px;
+    height:103px;
+   
+}
+
+.beltInfo {
+    width:400px;
+    height:auto;
+    background-color:#49111C;
+    margin-left:500px;
+    padding:30px;
+    border-radius:3px;
+    border:2px solid black;
+    
+}
+
+.beltshtml {
+    font-family:Aldrich;
+    color:#D0DDD7;
+}
+
+#sheading{
+    font-family:Aldrich;
+    color:#D0DDD7;
+}
+
+#SearchButton {
+    border-radius:3px;
+    font-family:Aldrich;
+    background-color:#49111C;
+      font-size:medium;
+      color:#D0DDD7;
+       padding:3px;
+}
+#divResult {
+     font-family:Aldrich;
+      color:#D0DDD7;
+      width:200px;
+      height:100px;
+     margin-left:30px;
+}
+#results{
+     font-family:Aldrich;
+     color:#D0DDD7;
+}
+.table {
+     font-family:Aldrich;
+     color:#D0DDD7;
+     border:1px solid white;
+}
+.create{
+     font-family:Aldrich;
+     margin-left:5px;
+}
+
+#index {
+     font-family:Aldrich;
+     color:#D0DDD7;
+     margin-left:600px;
+}
+
+#create2{
+         font-family:Aldrich;
+     color:#D0DDD7;
+}
+
+.back2 {
+      font-family:Aldrich;
+      margin-left:5px;
+      color:#D0DDD7;
+}
+
+#header3{
+     font-family:Aldrich;
+     color:#D0DDD7;
+     margin-left:600px;
+}
+.form-group {
+    font-family:Aldrich;
+     color:#D0DDD7;
+}

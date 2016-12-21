@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Search";
+}
+
+<div id="Wrapper">
+<h3 id="sheading">Search For Technique Id greater than 7 </h3>
+<div class="col-md-10">
+    <input type="text" id="ID" size="5"/>
+    <input type="submit" name="SearchButton" id="SearchButton" value="Search"/>
+</div>
+<br/>
+<h3 id="results"></h3>
+<div id="divResult"></div>
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+        <script type="text/javascript">
+            $(document).ready(
+                function () {
+                    $('#SearchButton').click(
+                        function () {
+                            search();
+                        });
+                });
+            function search() {
+                $('#divResult').empty();
+                var Id = $('#ID').val()
+                var url = "../API/JiuJitsus/" + Id;
+                $.ajax({
+                    url: url,
+                    type: "GET",
+                    dataType: "json",
+                    success: function (resp) {
+                        $("Results").appendTo("#results");
+                        $("#divResult").append("<p>Name: " + resp.Name + "<br/>Link: " + resp.Link + "<br/>Type: " + resp.Type);
+                        $("#divResult").append("</p>");
+                    }
+
+                })
+
+
+            }
+            
+        </script>
+    
+    
+    
+    
+    
+    
+    }
+
+</div>

@@ -1,0 +1,164 @@
+﻿
+@{
+    ViewBag.Title = "Map";
+}
+
+<script>
+      function initMap() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 6,
+          center: { lat: 53.232349, lng: -7.578321 }
+        });
+        var geocoder = new google.maps.Geocoder();
+        var eastcoast = { lat: 53.286556, lng: -6.146538 };
+        var ec = "EastCoast Jiu Jitsu";
+       
+        var sbg = { lat: 53.327416, lng: -6.338134 };
+        var s = "SBG";
+        
+        var satori = { lat: 53.384777, lng: -6.400574 };
+        var sb = "Satori BBJJ";
+       
+        var limerickBjj = { lat: 52.660108, lng: -8.630772 };
+        var lb = "Limerick Bjj";
+        
+        var pedro = { lat: 51.906467, lng: -8.492303 };
+        var pj = "Pedro Bjj";
+        
+        var royalAcademy = { lat: 51.906467, lng: -8.492303 };
+        var rj = "Royal Academy Bjj";
+       
+        var ryanoBjj = { lat: 53.399285, lng: -6.340068 };
+        var ra = "Ryano Bjj";
+       
+        var oranmoreJudo = { lat: 53.271920, lng: -8.918903 };
+        var oj = "Oranmore Judo";
+        
+        var evoGym = { lat: 53.269100, lng: -7.496987 };
+        var eg = "Evolution Gym";
+        
+        var cavanBjj = { lat: 53.983615, lng: -7.355245 };
+        var cb= "Cavan Bjj";
+        
+        var gracieBarra = {lat:54.580881, lng:-5.870947};
+        var gb = "Gracie Barra Belfast BJJ Academy ";
+
+        var marker = new google.maps.Marker({
+            position: eastcoast,
+            label: ec,
+            map: map
+        });
+
+        var marker = new google.maps.Marker({
+            position: sbg,
+            label: s,
+            map: map
+        });
+
+          
+        var marker = new google.maps.Marker({
+            position: satori,
+            label: sb,
+            map: map
+        });
+
+          
+        var marker = new google.maps.Marker({
+            position: limerickBjj,
+            label: lb,
+            map: map
+        });
+
+        var marker = new google.maps.Marker({
+            position: pedro,
+            label: pj,
+            map: map
+        });
+
+        var marker = new google.maps.Marker({
+            position: ryanoBjj,
+            label: ra,
+            map: map
+        });
+
+        var marker = new google.maps.Marker({
+            position: royalAcademy,
+            label:rj,
+            map: map
+        });
+
+        var marker = new google.maps.Marker({
+            position: oranmoreJudo,
+            label:oj,
+            map: map
+        });
+
+          
+        var marker = new google.maps.Marker({
+            position: evoGym,
+            label:eg,
+            map: map
+        });
+
+        var marker = new google.maps.Marker({
+            position: cavanBjj,
+            label: cb,
+            map: map
+        });
+
+        var marker = new google.maps.Marker({
+            position: gracieBarra,
+            label: gb,
+            map: map
+        });
+
+         
+
+        document.getElementById('submit').addEventListener('click', function() {
+            geocodeAddress(geocoder, map);
+            map.setZoom(10);
+        });
+      }
+
+      function geocodeAddress(geocoder, resultsMap) {
+        var address = document.getElementById('address').value;
+        geocoder.geocode({'address': address}, function(results, status) {
+          if (status === 'OK') {
+              resultsMap.setCenter(results[0].geometry.location);
+            var marker = new google.maps.Marker({
+              map: resultsMap,
+              position: results[0].geometry.location,
+            });
+          } else {
+            alert('Geocode was not successful for the following reason: ' + status);
+          }
+        });
+      }
+</script>
+
+
+
+<div class="Wrapper" onload="initMap()">
+
+    <div id="map"></div>
+    
+    <div class="search">
+        <p class="search1">
+           View academies in Ireland. 
+        </p>
+    </div>
+   
+     <div id="floating-panel">
+        <input id="address" type="text" placeholder="Search Address">
+        <input id="submit" type="button" value="Search">
+    </div>
+   
+     
+</div>
+
+
+
+
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAissDH1FQAl5BWstkbtv0TvohOsSHmFS8&callback=initMap">
+</script>
